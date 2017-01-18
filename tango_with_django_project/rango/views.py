@@ -12,3 +12,6 @@ def index(request):
 
     #return HttpResponse("Rango says hey there partner!")
     return render(request, 'rango/index.html', context = context_dict)
+def about(request):
+    context_dict = {'MEDIA_URL': '/media/'}
+    return render(request, 'rango/about.html', context = context_dict)

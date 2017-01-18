@@ -29,4 +29,4 @@ urlpatterns = [
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # settings.MEDIA_URL is the MEDIA_URL definced in settings (remember this whole thing
 # is a pyton package.  document_root is the media root defined in settings.
-# Together the whole thing is a url.
+# Together the whole thing is a url.fd
