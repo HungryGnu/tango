@@ -1,18 +1,19 @@
-<!Doctype html>
+{% extends 'rango/base.html' %}
 {% load staticfiles %}
 
-<html>
-   <head>About Rango</head>
-   <body>
-   <h1>Rango The Lizard</h1>
-   <p>Rango is a chameleon and star of the 2011 film bearing his name.</p>
-   <img src="{% static "images/Rango.jpg" %}"
-                 alt="Picture of Django standing in for Rango" />
-   <h1>Rango The Website</h1>
-   <p>Rango the website is a tool created to allow a user to brows through user-defined
-   categories to access various web pages.  In spanish the work rango is used to mean
-   "a league ranked by quality"  this version was made by Ted Johnson following the
-   <a href="http://www.tangowithdjango.com/">Tango With Django</a> tutorial.</p>
-   <img /> Kitty!<img src=" {{ MEDIA_URL }}cat.jpg"
-   </body>
-</html>
+
+
+{% block body_block %}
+    {% if user.is_authenticated %}
+        <h1> Welcome {{ user.username }}! You have visited on {{ visits }} different days!</h1>
+    {% endif %}
+    <h1>Rango The Lizard</h1>
+    <p>Rango is a chameleon and star of the 2011 film bearing his name.</p>
+    <img src="{% static "images/Rango.jpg" %}" alt="Picture of Django standing in for Rango" />
+    <h1>Rango The Website</h1>
+    <p>Rango the website is a tool created to allow a user to browse through user-defined
+    categories to access various web pages.  In spanish the work rango is used to mean
+    "a league ranked by quality"  this version was made by Ted Johnson following the
+    <a href="http://www.tangowithdjango.com/">Tango With Django</a> tutorial.</p>
+    <img src=" {{ MEDIA_URL }}cat.jpg" alt="Kitty!"\>
+{% endblock %}

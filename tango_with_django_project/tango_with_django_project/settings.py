@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
+    'registration'# add the registration package
 ]
 
 MIDDLEWARE = [
@@ -94,6 +95,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'OPTIONS': {'min_length': 6,}
     },
     {
         'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
@@ -103,6 +105,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+PASSWORD_HASHERS = (
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher'
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
@@ -128,3 +134,20 @@ STATIC_URL = '/static/'
 #Media Files
 MEDIA_ROOT = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+LOGIN_URL = '/rango/login/'
+
+# Registraion package settings:
+
+# If True, users can register
+REGISTRATION_OPEN = True
+# one Week activation window; you may of cource, use a different value
+ACCOUNT_ACTIVATION_DAYS = 7
+# If True, the user will be automatically logged in/
+REGISTRATION_AUTO_LOGIN = True
+# The page you wnat users to arrive at after they successfully log in:
+LOGIN_REDIRECT_URL = '/rango'
+# The page users are directed to if they are not logged in,
+# and are trying to access pages required authentication
+LOGIN_URL = 'accounts/login'
+

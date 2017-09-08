@@ -23,9 +23,10 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^rango/', include('rango.urls')),
-    #above maprs any URLS starting with rangp/ to be handled by the rango
-    #application.
+    # above maprs any URLS starting with rango/ to be handled by the rango
+    # application.
     url(r'^admin/', admin.site.urls),
+    url(r'^accounts/', include('registration.backends.simple.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # settings.MEDIA_URL is the MEDIA_URL definced in settings (remember this whole thing
 # is a pyton package.  document_root is the media root defined in settings.
