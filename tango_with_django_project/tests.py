@@ -14,10 +14,10 @@ class GeneralTests(TestCase):
 
 class IndexPageTests(TestCase):
     def test_index_contains_hello_message(self):
-        # Check if there is the message 'Rango Says'
+        # Check if there is the message 'rango Says'
         # Chapter 4
         response = self.client.get(reverse('index'))
-        self.assertIn(b'Rango says', response.content)
+        self.assertIn(b'rango says', response.content)
 
     def test_index_using_template(self):
         # Check the template used to render index page
@@ -98,7 +98,7 @@ class Chapter4ViewTests(TestCase):
     def test_index_contains_hello_message(self):
         # Check if there is the message 'hello world!'
         response = self.client.get(reverse('index'))
-        self.assertIn('Rango says', response.content)
+        self.assertIn('rango says', response.content)
 
     def test_does_index_contain_img(self):
         # Check if the index page contains an img

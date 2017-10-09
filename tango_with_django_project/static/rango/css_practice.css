@@ -1,0 +1,23 @@
+
+.container {
+    border: 1px solid black;
+    height: 70px;
+    position: relative;
+}
+
+.yellow {
+    background-color: yellow;
+    border: 3px solid black;
+    position: absolute;
+    top: 45;
+    right: 200;
+}
+
+.red {
+    background-color: red;
+    border: 1px dotted black;
+    position: absolute;
+    float: right
+    top: 50;
+    left 40;
+}

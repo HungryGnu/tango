@@ -92,5 +92,5 @@ def add_cat(name):
 
 # Start execution here!
 if __name__ == '__main__':
-    print("Starting Rango population script ...")
+    print("Starting rango population script ...")
     populate()

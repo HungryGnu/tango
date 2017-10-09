@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rango',
-    'registration'# add the registration package
+    'registration', # add the registration package
+    'bootstrap_toolkit'
 ]
 
 MIDDLEWARE = [
@@ -124,7 +125,7 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# Static files (rango, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATICFILES_DIRS = [STATIC_DIR,]
